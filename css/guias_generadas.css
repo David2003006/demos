@@ -1,0 +1,155 @@
+.table-view-container {
+    width: 100%;
+    max-width: 1200px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.table-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.header-actions .btn-outline-cyan {
+    background: transparent;
+    border: 1px solid #00b5d8;
+    color: #00b5d8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Tabla Estilizada */
+.table-container-responsive {
+    overflow-x: auto;
+}
+
+.modern-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.modern-data-table th {
+    background-color: #f8fafc;
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #4a5568;
+    letter-spacing: 0.025em;
+}
+
+.modern-data-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #edf2f7;
+    vertical-align: middle;
+}
+
+.modern-data-table tr:hover {
+    background-color: #f7fafc;
+}
+
+/* Elementos de la celda */
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.user-role {
+    font-size: 0.75rem;
+    color: #718096;
+}
+
+.guide-id {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    color: #3182ce;
+    background: #ebf8ff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.dim-tag {
+    font-size: 0.85rem;
+    color: #4a5568;
+}
+
+/* Badges de paquetería */
+.badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.badge-estafeta { background-color: #fed7d7; color: #9b2c2c; }
+.badge-dhl { background-color: #fef08a; color: #854d0e; }
+
+/* Status Dot */
+.status-dot {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.status-dot::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-dot.success::before { background-color: #48bb78; }
+
+.btn-icon-table {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-icon-table:hover { color: #3182ce; }
+
+/* Footer */
+.table-footer {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #718096;
+    background-color: #f8fafc;
+}
+
+.pagination-mock {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pagination-mock span {
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.pagination-mock span.active {
+    font-weight: 700;
+    color: #00b5d8;
+}

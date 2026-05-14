@@ -1,0 +1,132 @@
+<link rel="stylesheet" href="../css/generar_guias.css">
+
+<div class="guias-container">
+    <div class="glass-card guides-card">
+        
+        <div class="card-header">
+            <h2 class="form-heading">Generación de Guías de Envío</h2>
+            <p class="form-subheading">Configure la paquetería e ingrese los datos de origen y destino final.</p>
+        </div>
+
+        <form id="guides-form">
+            <div class="form-section">
+                <h3 class="section-title"><span class="step-number">1</span> Selección de Paquetería</h3>
+                <div class="form-group max-w-sm">
+                    <label for="carrier-select">Proveedor de Servicio</label>
+                    <select id="carrier-select" name="carrier" required>
+                        <option value="" disabled selected>Selecciona una paquetería...</option>
+                        <option value="DHL">DHL Express</option>
+                        <option value="Estafeta">Estafeta Comercial</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-title"><span class="step-number">2</span> Descripción del Paquete</h3>
+                <div class="form-group">
+                    <label>¿Qué contiene el paquete? (Descripción detallada)</label>
+                    <input type="text" name="descPckg" placeholder="Ej. Artículos electrónicos de oficina" required>
+                </div>
+            </div>
+
+            <div class="address-grid-layout">
+                
+                <div class="address-column-card">
+                    <h4 class="address-card-title"><i data-lucide="package"></i> Datos del Remitente</h4>
+                    <div class="vertical-form-stack">
+                        <div class="form-group">
+                            <label>Nombre de contacto</label>
+                            <input type="text" name="nombR" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Compañía / Empresa</label>
+                            <input type="text" name="compR" placeholder="Razón social (Opcional)">
+                        </div>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="tel" name="phoneR" placeholder="10 dígitos" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo Electrónico</label>
+                                <input type="email" name="emailR" placeholder="correo@ejemplo.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Calle y Número</label>
+                            <input type="text" name="streetR" placeholder="Av. Principal #123" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Colonia</label>
+                            <input type="text" name="colR" placeholder="Colonia o Fraccionamiento" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Referencias de ubicación</label>
+                            <input type="text" name="refR" placeholder="Ej. Entre calle A y calle B">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="address-column-card target-card">
+                    <h4 class="address-card-title"><i data-lucide="map-pin"></i> Datos del Destinatario</h4>
+                    <div class="vertical-form-stack">
+                        <div class="form-group">
+                            <label>Nombre de contacto</label>
+                            <input type="text" name="nombD" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Compañía / Empresa</label>
+                            <input type="text" name="compD" placeholder="Razón social (Opcional)">
+                        </div>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="tel" name="phoneD" placeholder="10 dígitos" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo Electrónico</label>
+                                <input type="email" name="emailD" placeholder="correo@ejemplo.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Calle y Número</label>
+                            <input type="text" name="streetD" placeholder="Av. Destino #456" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Colonia</label>
+                            <input type="text" name="colD" placeholder="Colonia o Fraccionamiento" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Referencias de ubicación</label>
+                            <input type="text" name="refD" placeholder="Ej. Portón color blanco">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-actions-footer">
+                <button type="submit" class="btn btn-cyan btn-lg">Generar Guía Ahora</button>
+            </div>
+        </form>
+    </div>
+
+    <dialog id="label-success-modal" class="native-modal">
+        <div class="modal-box">
+            <div class="modal-header-section">
+                <h3>🎉 ¡Guía Procesada Con Éxito!</h3>
+                <button type="button" class="close-modal-btn" id="close-modal-x">&times;</button>
+            </div>
+            <div class="modal-body-section">
+                <p>La etiqueta de envío ha sido generada correctamente por el carrier seleccionado.</p>
+                <div class="download-box-wrapper">
+                    <i data-lucide="file-text" class="pdf-icon"></i>
+                    <span id="carrier-modal-badge">Carrier: DHL</span>
+                    <button type="button" id="btn-download-pdf" class="btn btn-teal">
+                        <i data-lucide="download"></i> Descargar Documento PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+</div>

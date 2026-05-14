@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="../css/cotizar.css">
+
+<div class="cotizar-container">
+    <!-- Card Principal del Formulario -->
+    <div class="glass-card form-card">
+        <div class="card-header">
+            <h2 class="form-heading">Información de Cotización</h2>
+            <p class="form-subheading">Completa los datos de origen y destino para calcular los costos de envío.</p>
+        </div>
+
+        <form id="quotes-form">
+            <div class="form-grid">
+                <!-- Origen -->
+                <div class="form-group">
+                    <label>Código Postal Origen</label>
+                    <input type="number" name="originZip" placeholder="Ej: 06000" required>
+                </div>
+                <div class="form-group">
+                    <label>Ciudad de Origen</label>
+                    <input type="text" name="originCity" value="Ciudad de México" readonly class="readonly-input">
+                </div>
+
+                <!-- Destino -->
+                <div class="form-group">
+                    <label>Código Postal Destino</label>
+                    <input type="number" name="destinyZip" placeholder="Ej: 64000" required>
+                </div>
+                <div class="form-group">
+                    <label>Ciudad de Destino</label>
+                    <input type="text" name="destinyCity" value="Monterrey" readonly class="readonly-input">
+                </div>
+
+                <!-- Detalles de envío -->
+                <div class="form-group">
+                    <label>Fecha de Envío</label>
+                    <input type="datetime-local" name="date" required>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="includeInsurance">
+                        <span class="checkmark"></span>
+                        <b>Incluir seguro</b>
+                    </label>
+                    <small>Indicar si se prefiere asegurar el envío</small>
+                </div>
+
+                <div id="insurance-input-wrapper" class="form-group hidden">
+                    <label>Monto de Seguro ($)</label>
+                    <input type="number" name="insurance" placeholder="Valor declarado">
+                </div>
+            </div>
+
+            <!-- Sección de Paquetes (Componente Dinámico) -->
+            <div class="packages-section">
+                <div class="section-header">
+                    <h3>Detalles del Paquete</h3>
+                    <button type="button" class="btn-add-pkg">+ Agregar otro</button>
+                </div>
+                <div class="package-item">
+                    <input type="number" placeholder="Peso (kg)" required>
+                    <input type="number" placeholder="Alto (cm)" required>
+                    <input type="number" placeholder="Ancho (cm)" required>
+                    <input type="number" placeholder="Largo (cm)" required>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-teal btn-block">Continuar y Cotizar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Resultados de Cotización (Sección que aparece al cotizar) -->
+    <div id="quotes-results" class="results-section hidden">
+        <h3 class="results-heading">Servicios Disponibles</h3>
+        <div class="table-container">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Paquetería</th>
+                        <th>Servicio</th>
+                        <th>Subtotal</th>
+                        <th>Total</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Mock de resultado -->
+                    <tr>
+                        <td><img src="https://www.estafeta.com/-/media/Images/Estafeta/Brand/logotipo-estafeta.svg" class="parcel-logo" alt="Estafeta"></td>
+                        <td>Terrestre Económico</td>
+                        <td>$185.00</td>
+                        <td class="text-bold">$214.60</td>
+                        <td><button class="btn btn-cyan btn-sm">Generar Guía</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,165 @@
+:root {
+    --chakra-cyan: #00b5d8;
+    --chakra-cyan-hover: #00a3c4;
+    --chakra-teal: #319795;
+    --chakra-gray-100: #edf2f7;
+    --chakra-gray-200: #e2e8f0;
+    --chakra-gray-800: #1a202c;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--chakra-gray-800);
+    background-color: #f7fafc;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#app-root {
+    height: 100%;
+}
+
+/* --- ESTILOS COMPONENTE: LOGIN VIEW --- */
+.login-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+}
+
+.login-hero {
+    height: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo-img {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.login-footer {
+    grid-column: span 2;
+    background-color: var(--text-teal, #008080);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* --- ESTILOS COMPONENTE: DASHBOARD VIEW --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: white;
+    border-right: 1px solid var(--chakra-gray-200);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-badge {
+    font-size: 0.85rem;
+    background: var(--chakra-gray-100);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.drawer-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.drawer-nav li button {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.drawer-nav li button:hover, .drawer-nav li.active button {
+    background-color: var(--chakra-gray-100);
+    font-weight: 600;
+}
+
+.main-content {
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: #f7fafc;
+}
+
+/* --- COMPONENTES ATÓMICOS (Botones generales) --- */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-cyan { background-color: var(--chakra-cyan); color: white; }
+.btn-cyan:hover { background-color: var(--chakra-cyan-hover); }
+.btn-teal { background-color: var(--chakra-teal); color: white; }
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Estilo para el botón de cierre de sesión dentro del menú */
+.btn-logout {
+    color: #e53e3e !important;
+    font-weight: 600;
+}

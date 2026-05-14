@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Dashboard - Demo</title>
+<!-- Icono de la pestaña (Favicon) -->
+<link rel="icon" type="image/jpg" href="https://i.ibb.co/0GvqQcH/1-c2-1.jpg">
+<link rel="stylesheet" href="../css/login.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div id="app-root"></div>
+
+<template id="template-login">
+<div class="login-container">
+<div class="login-hero">
+<img src="https://mumbaimirror.indiatimes.com/photo/81132317.cms" alt="Landing" class="hero-img">
+</div>
+<div class="login-form-section">
+<!-- Agregamos align-items: center para centrar todo el contenido del box (incluyendo el logo) -->
+<div class="login-box" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img src="https://i.ibb.co/0GvqQcH/1-c2-1.jpg" alt="Logo" class="logo-img" style="margin-bottom: 2rem;">
+<div id="login-component-placeholder" style="width: 100%;">
+    <!-- Contenedor con espaciado vertical -->
+    <div class="login-actions" style="display: flex; flex-direction: column; gap: 1rem;">
+        <button id="btn-mock-login" class="btn btn-cyan">Simular Iniciar Sesión (Admin)</button>
+        <button id="btn-mock-client" class="btn btn-teal">Simular Iniciar Sesión (Cliente)</button>
+    </div>
+</div>
+</div>
+</div>
+<footer class="login-footer">
+Información de pie de pagina
+</footer>
+</div>
+</template>
+
+<template id="template-dashboard">
+<div class="dashboard-grid">
+<aside class="sidebar">
+<div class="sidebar-header">
+<button class="btn-icon btn-cyan">
+<i data-lucide="settings"></i>
+</button>
+<span id="user-display-name" class="user-badge"></span>
+</div>
+<nav class="drawer-nav">
+<ul id="menu-options-list">
+</ul>
+</nav>
+</aside>
+
+<main class="main-content">
+<div id="dynamic-content-wrapper">
+</div>
+</main>
+</div>
+</template>
+
+<script src="../javascript/login.js" defer></script>
+</body>
+</html> 

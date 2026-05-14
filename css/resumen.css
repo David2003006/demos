@@ -1,0 +1,121 @@
+
+
+/* Contenedor padre que envuelve todo el componente de resumen */
+.resume-board-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Rejilla principal para las 3 tarjetas */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px; /* Limita el ancho para mantener una proporción elegante */
+}
+
+/* Estructura atómica de cada tarjeta (Equivalente al <Box> o <Stat> de Chakra) */
+.kpi-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0; /* var(--chakra-gray-200) */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* var(--shadow-md) */
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto Hover interactivo para impresionar en la Demo */
+.kpi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Parte superior de la tarjeta (Título e Icono) */
+.kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+/* Texto del indicador */
+.kpi-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #718096; /* var(--chakra-gray-500) */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Contenedor del Icono (Simula el empaquetado de Chakra) */
+.kpi-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Iconos dinámicos usando la paleta de Chakra UI */
+.icon-blue { 
+    background-color: #ebf8ff; 
+    color: #2b6cb0; 
+}
+.icon-orange { 
+    background-color: #feebc8; 
+    color: #c05621; 
+}
+.icon-green { 
+    background-color: #e6fffa; 
+    color: #234e52; 
+}
+
+/* Ajuste de tamaño para los SVGs de Lucide dentro del wrapper */
+.kpi-icon-wrapper svg, 
+.kpi-icon-wrapper i {
+    width: 22px;
+    height: 22px;
+}
+
+/* Bloque del contenido numérico */
+.kpi-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Valor numérico principal destacable */
+.kpi-value {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a202c; /* var(--chakra-gray-800) */
+    letter-spacing: -0.02em;
+}
+
+/* Subtextos de estado e incremento porcentual */
+.kpi-subtext {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.kpi-subtext.positive { 
+    color: #38a169; /* Verde Chakra */
+}
+
+.kpi-subtext.neutral { 
+    color: #718096; /* Gris Informativo */
+}
+
+/* Media Query para asegurar Responsividad (Mobile First / Breakpoint de Senior) */
+@media (max-width: 768px) {
+    .kpi-grid {
+        grid-template-columns: 1fr; /* Pasa de 3 columnas a una sola en pantallas chicas */
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="../css/administrar_usuarios.css">
+
+<div class="admin-users-container">
+    <div class="glass-card admin-card">
+        <!-- Encabezado con estadísticas rápidas -->
+        <div class="admin-header">
+            <div class="header-content">
+                <h2 class="form-heading">Panel de Usuarios</h2>
+                <p class="form-subheading">Gestiona los accesos, roles y permisos de la plataforma.</p>
+            </div>
+            <button id="btn-toggle-user-form" class="btn btn-cyan">
+                <i data-lucide="user-plus"></i> Agregar Nuevo Usuario
+            </button>
+        </div>
+
+        <!-- Sección de Tabla (Equivalente a UsersTable) -->
+        <div id="users-table-section" class="table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Referencia</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="user-main-name">David Alejandro</span></td>
+                        <td>david@example.com</td>
+                        <td><span class="role-tag role-admin">Admin</span></td>
+                        <td><span class="ref-text">REF-001</span></td>
+                        <td>
+                            <button class="btn-edit" onclick="simularEdicion()"><i data-lucide="edit-3"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="user-main-name">Cliente Beta</span></td>
+                        <td>cliente@sucursal.com</td>
+                        <td><span class="role-tag role-user">Cliente</span></td>
+                        <td><span class="ref-text">REF-042</span></td>
+                        <td>
+                            <button class="btn-edit"><i data-lucide="edit-3"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sección de Formulario (Equivalente a UserManagement) - Oculto por defecto -->
+        <div id="user-form-section" class="form-management-wrapper hidden">
+            <div class="form-management-header">
+                <h3><i data-lucide="user-cog"></i> Gestión de Usuario</h3>
+                <button id="btn-close-form" class="btn-icon-close">&times;</button>
+            </div>
+            <form id="user-mgmt-form">
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label>Nombre de Usuario</label>
+                        <input type="text" name="userName" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" name="email" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" name="password" placeholder="********">
+                    </div>
+                    <div class="form-group">
+                        <label>Rol de Usuario</label>
+                        <select name="role">
+                            <option value="admin">Administrador</option>
+                            <option value="client">Cliente</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-span-2">
+                        <label>Referencia Interna</label>
+                        <input type="text" name="string_reference" placeholder="ID de referencia comercial">
+                    </div>
+                </div>
+                <div class="form-actions-right">
+                    <button type="button" id="btn-cancel-user" class="btn btn-outline">Cancelar</button>
+                    <button type="submit" class="btn btn-teal">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

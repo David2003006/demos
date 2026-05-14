@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="../css/guias_generadas.css">
+
+<div class="table-view-container">
+    <div class="glass-card table-card">
+        <div class="card-header">
+            <div class="header-info">
+                <h2 class="form-heading">Historial de Guías</h2>
+                <p class="form-subheading">Listado detallado de todas las guías generadas en el sistema.</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-outline-cyan btn-sm">
+                    <i data-lucide="download"></i> Exportar CSV
+                </button>
+            </div>
+        </div>
+
+        <div class="table-container-responsive">
+            <table class="modern-data-table">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>ID Guía</th>
+                        <th>Paquetería</th>
+                        <th>Dimensiones (cm)</th>
+                        <th>Peso (kg)</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="user-info">
+                                <span class="user-name">David Alejandro</span>
+                                <small class="user-role">Admin</small>
+                            </div>
+                        </td>
+                        <td><span class="guide-id">#EST-99281</span></td>
+                        <td><span class="badge badge-estafeta">Estafeta</span></td>
+                        <td><span class="dim-tag">15x15x15</span></td>
+                        <td class="text-bold">15.0 kg</td>
+                        <td><span class="status-dot success">Generada</span></td>
+                        <td><button class="btn-icon-table"><i data-lucide="eye"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="user-info">
+                                <span class="user-name">Cliente Beta</span>
+                                <small class="user-role">Cliente</small>
+                            </div>
+                        </td>
+                        <td><span class="guide-id">#DHL-44512</span></td>
+                        <td><span class="badge badge-dhl">DHL</span></td>
+                        <td><span class="dim-tag">10x10x10</span></td>
+                        <td class="text-bold">10.0 kg</td>
+                        <td><span class="status-dot success">Generada</span></td>
+                        <td><button class="btn-icon-table"><i data-lucide="eye"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="user-info">
+                                <span class="user-name">Juan Pérez</span>
+                                <small class="user-role">Cliente</small>
+                            </div>
+                        </td>
+                        <td><span class="guide-id">#EST-88123</span></td>
+                        <td><span class="badge badge-estafeta">Estafeta</span></td>
+                        <td><span class="dim-tag">20x30x10</span></td>
+                        <td class="text-bold">5.5 kg</td>
+                        <td><span class="status-dot success">Generada</span></td>
+                        <td><button class="btn-icon-table"><i data-lucide="eye"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table-footer">
+            <p>Mostrando 3 de 150 guías generadas</p>
+            <div class="pagination-mock">
+                <span>«</span> <span class="active">1</span> <span>2</span> <span>3</span> <span>»</span>
+            </div>
+        </div>
+    </div>
+</div>
