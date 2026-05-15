@@ -127,7 +127,7 @@ async function renderMainContent() {
     if (AppState.contentToRender === "ResumeBoard") {
         container.innerHTML = `<div class="kpi-card"><p>Cargando panel de resumen...</p></div>`;
         try {
-            const response = await fetch('../html/resumen.html');
+            const response = await fetch('html/resumen.html');
             if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
             const htmlText = await response.text();
             container.innerHTML = htmlText;
@@ -140,7 +140,7 @@ async function renderMainContent() {
     else if (AppState.contentToRender === "QuotesBoard") {
         container.innerHTML = `<div class="glass-card"><p>Cargando módulo de cotizaciones...</p></div>`;
         try {
-            const response = await fetch('../html/cotizar.html');
+            const response = await fetch('html/cotizar.html');
             if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
             const htmlText = await response.text();
             container.innerHTML = htmlText;
@@ -161,7 +161,7 @@ async function renderMainContent() {
     else if (AppState.contentToRender === "LabelsBoard") {
         container.innerHTML = `<div class="glass-card"><p>Cargando módulo de guías...</p></div>`;
         try {
-            const response = await fetch('../html/generar_guias.html');
+            const response = await fetch('html/generar_guias.html');
             if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
             const htmlText = await response.text();
             container.innerHTML = htmlText;
@@ -182,28 +182,28 @@ async function renderMainContent() {
             if (closeX && modal) closeX.addEventListener('click', () => modal.close());
         } catch (error) {
             console.error("Error en el fetch de guías:", error);
-            container.innerHTML = `<div class="glass-card"><h2>Error</h2><p>No se pudo leer ../html/generar_guias.html</p></div>`;
+            container.innerHTML = `<div class="glass-card"><h2>Error</h2><p>No se pudo leer html/generar_guias.html</p></div>`;
         }
     }
     
     else if (AppState.contentToRender === "LabelsTable") {
         container.innerHTML = `<div class="glass-card"><p>Cargando historial de guías...</p></div>`;
         try {
-            const response = await fetch('../html/guias_generadas.html');
+            const response = await fetch('html/guias_generadas.html');
             if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
             const htmlText = await response.text();
             container.innerHTML = htmlText;
         } catch (error) {
             console.error("Error en el fetch de historial:", error);
-            container.innerHTML = `<div class="glass-card"><h2>Error</h2><p>No se pudo leer ../html/guias_generadas.html</p></div>`;
+            container.innerHTML = `<div class="glass-card"><h2>Error</h2><p>No se pudo leer html/guias_generadas.html</p></div>`;
         }
     }
 
     else if (AppState.contentToRender === "UsersLayout") {
         container.innerHTML = `<div class="glass-card"><p>Iniciando panel de administración...</p></div>`;
         try {
-            console.log("Solicitando archivo externo desde: ../html/administrar_usuarios.html");
-            const response = await fetch('../html/administrar_usuarios.html');
+            console.log("Solicitando archivo externo desde: html/administrar_usuarios.html");
+            const response = await fetch('html/administrar_usuarios.html');
             if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
             const htmlText = await response.text();
             container.innerHTML = htmlText;
@@ -223,7 +223,7 @@ async function renderMainContent() {
             console.log("Archivo administrar_usuarios.html renderizado con éxito.");
         } catch (error) {
             console.error("Error en el fetch de usuarios:", error);
-            container.innerHTML = `<div class="glass-card"><h2 style="color: #e53e3e;">Error</h2><p>No se pudo leer ../html/administrar_usuarios.html</p></div>`;
+            container.innerHTML = `<div class="glass-card"><h2 style="color: #e53e3e;">Error</h2><p>No se pudo leer html/administrar_usuarios.html</p></div>`;
         }
     }
     else {
