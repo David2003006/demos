@@ -37,7 +37,6 @@ const menuClientOptions = [
     { label: "Cerrar sesión", key: "logout", isAction: true }
 ];
 
-// --- 3. FUNCIÓN DE RENDERIZADO PRINCIPAL ---
 function renderApp() {
     console.log("🚀 Ejecutando renderApp()...");
     const root = document.getElementById('app-root');
