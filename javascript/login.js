@@ -38,7 +38,7 @@ const menuClientOptions = [
 ];
 
 function renderApp() {
-    console.log("🚀 Ejecutando renderApp()...");
+    console.log("Ejecutando renderApp()...");
     const root = document.getElementById('app-root');
     
     if (!root) {
